@@ -1,0 +1,7 @@
+defmodule <%= context.web_module %>.Resolvers.<%= schema.alias %> do
+
+  def list_<%= schema.name_plural %>(_parent, _args, _resolution) do
+    {:ok, []}
+  end
+
+end
