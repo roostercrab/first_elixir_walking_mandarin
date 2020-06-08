@@ -1,0 +1,102 @@
+<h1>Show Mandarin to english word</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent,
+    id: @mandarin_to_english_word.id,
+    title: @page_title,
+    action: @live_action,
+    mandarin_to_english_word: @mandarin_to_english_word,
+    return_to: Routes.mandarin_to_english_word_show_path(@socket, :show, @mandarin_to_english_word) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Hanzi standard:</strong>
+    <%= @mandarin_to_english_word.hanzi_standard %>
+  </li>
+
+  <li>
+    <strong>Hanzi traditional:</strong>
+    <%= @mandarin_to_english_word.hanzi_traditional %>
+  </li>
+
+  <li>
+    <strong>Pinyin:</strong>
+    <%= @mandarin_to_english_word.pinyin %>
+  </li>
+
+  <li>
+    <strong>Meaning:</strong>
+    <%= @mandarin_to_english_word.meaning %>
+  </li>
+
+  <li>
+    <strong>Pronounciation helper:</strong>
+    <%= @mandarin_to_english_word.pronounciation_helper %>
+  </li>
+
+  <li>
+    <strong>Mnemonic:</strong>
+    <%= @mandarin_to_english_word.mnemonic %>
+  </li>
+
+  <li>
+    <strong>Part of speech:</strong>
+    <%= @mandarin_to_english_word.part_of_speech %>
+  </li>
+
+  <li>
+    <strong>Radical:</strong>
+    <%= @mandarin_to_english_word.radical %>
+  </li>
+
+  <li>
+    <strong>Initial:</strong>
+    <%= @mandarin_to_english_word.initial %>
+  </li>
+
+  <li>
+    <strong>Final:</strong>
+    <%= @mandarin_to_english_word.final %>
+  </li>
+
+  <li>
+    <strong>Tone:</strong>
+    <%= @mandarin_to_english_word.tone %>
+  </li>
+
+  <li>
+    <strong>Etymology:</strong>
+    <%= @mandarin_to_english_word.etymology %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @mandarin_to_english_word.image %>
+  </li>
+
+  <li>
+    <strong>Sound:</strong>
+    <%= @mandarin_to_english_word.sound %>
+  </li>
+
+  <li>
+    <strong>Stroke order simplified:</strong>
+    <%= @mandarin_to_english_word.stroke_order_simplified %>
+  </li>
+
+  <li>
+    <strong>Stroke order traditional:</strong>
+    <%= @mandarin_to_english_word.stroke_order_traditional %>
+  </li>
+
+  <li>
+    <strong>Vote value:</strong>
+    <%= @mandarin_to_english_word.vote_value %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.mandarin_to_english_word_show_path(@socket, :edit, @mandarin_to_english_word), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.mandarin_to_english_word_index_path(@socket, :index) %></span>

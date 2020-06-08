@@ -1,0 +1,67 @@
+<h1>Listing Mandarin to english words</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent,
+    id: @mandarin_to_english_word.id || :new,
+    title: @page_title,
+    action: @live_action,
+    mandarin_to_english_word: @mandarin_to_english_word,
+    return_to: Routes.mandarin_to_english_word_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hanzi standard</th>
+      <th>Hanzi traditional</th>
+      <th>Pinyin</th>
+      <th>Meaning</th>
+      <th>Pronounciation helper</th>
+      <th>Mnemonic</th>
+      <th>Part of speech</th>
+      <th>Radical</th>
+      <th>Initial</th>
+      <th>Final</th>
+      <th>Tone</th>
+      <th>Etymology</th>
+      <th>Image</th>
+      <th>Sound</th>
+      <th>Stroke order simplified</th>
+      <th>Stroke order traditional</th>
+      <th>Vote value</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="mandarin_to_english_words">
+    <%= for mandarin_to_english_word <- @mandarin_to_english_words do %>
+      <tr id="mandarin_to_english_word-<%= mandarin_to_english_word.id %>">
+        <td><%= mandarin_to_english_word.hanzi_standard %></td>
+        <td><%= mandarin_to_english_word.hanzi_traditional %></td>
+        <td><%= mandarin_to_english_word.pinyin %></td>
+        <td><%= mandarin_to_english_word.meaning %></td>
+        <td><%= mandarin_to_english_word.pronounciation_helper %></td>
+        <td><%= mandarin_to_english_word.mnemonic %></td>
+        <td><%= mandarin_to_english_word.part_of_speech %></td>
+        <td><%= mandarin_to_english_word.radical %></td>
+        <td><%= mandarin_to_english_word.initial %></td>
+        <td><%= mandarin_to_english_word.final %></td>
+        <td><%= mandarin_to_english_word.tone %></td>
+        <td><%= mandarin_to_english_word.etymology %></td>
+        <td><%= mandarin_to_english_word.image %></td>
+        <td><%= mandarin_to_english_word.sound %></td>
+        <td><%= mandarin_to_english_word.stroke_order_simplified %></td>
+        <td><%= mandarin_to_english_word.stroke_order_traditional %></td>
+        <td><%= mandarin_to_english_word.vote_value %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.mandarin_to_english_word_show_path(@socket, :show, mandarin_to_english_word) %></span>
+          <span><%= live_patch "Edit", to: Routes.mandarin_to_english_word_index_path(@socket, :edit, mandarin_to_english_word) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: mandarin_to_english_word.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Mandarin to english word", to: Routes.mandarin_to_english_word_index_path(@socket, :new) %></span>

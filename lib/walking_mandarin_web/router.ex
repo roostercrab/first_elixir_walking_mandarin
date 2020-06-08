@@ -21,6 +21,13 @@ defmodule WalkingMandarinWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+
+    live "/mandarin_to_english_words", MandarinToEnglishWordLive.Index, :index
+    live "/mandarin_to_english_words/new", MandarinToEnglishWordLive.Index, :new
+    live "/mandarin_to_english_words/:id/edit", MandarinToEnglishWordLive.Index, :edit
+    live "/mandarin_to_english_words/:id", MandarinToEnglishWordLive.Show, :show
+    live "/mandarin_to_english_words/:id/show/edit", MandarinToEnglishWordLive.Show, :edit
+
   end
 
   # Other scopes may use custom stacks.
