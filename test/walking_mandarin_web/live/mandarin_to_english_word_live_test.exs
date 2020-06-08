@@ -25,15 +25,15 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
     test "lists all mandarin_to_english_words", %{conn: conn, mandarin_to_english_word: mandarin_to_english_word} do
       {:ok, _index_live, html} = live(conn, Routes.mandarin_to_english_word_index_path(conn, :index))
 
-      assert html =~ "Listing Mandarin to english words"
+      assert html =~ "Listing Mandarin to English Words"
       assert html =~ mandarin_to_english_word.etymology
     end
 
     test "saves new mandarin_to_english_word", %{conn: conn} do
       {:ok, index_live, _html} = live(conn, Routes.mandarin_to_english_word_index_path(conn, :index))
 
-      assert index_live |> element("a", "New Mandarin to english word") |> render_click() =~
-               "New Mandarin to english word"
+      assert index_live |> element("a", "New Mandarin to English Word") |> render_click() =~
+               "New Mandarin to English Word"
 
       assert_patch(index_live, Routes.mandarin_to_english_word_index_path(conn, :new))
 
@@ -47,7 +47,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
         |> render_submit()
         |> follow_redirect(conn, Routes.mandarin_to_english_word_index_path(conn, :index))
 
-      assert html =~ "Mandarin to english word created successfully"
+      assert html =~ "Mandarin to English Word created successfully"
       assert html =~ "some etymology"
     end
 
@@ -55,7 +55,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
       {:ok, index_live, _html} = live(conn, Routes.mandarin_to_english_word_index_path(conn, :index))
 
       assert index_live |> element("#mandarin_to_english_word-#{mandarin_to_english_word.id} a", "Edit") |> render_click() =~
-               "Edit Mandarin to english word"
+               "Edit Mandarin to English Word"
 
       assert_patch(index_live, Routes.mandarin_to_english_word_index_path(conn, :edit, mandarin_to_english_word))
 
@@ -69,7 +69,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
         |> render_submit()
         |> follow_redirect(conn, Routes.mandarin_to_english_word_index_path(conn, :index))
 
-      assert html =~ "Mandarin to english word updated successfully"
+      assert html =~ "Mandarin to English Word updated successfully"
       assert html =~ "some updated etymology"
     end
 
@@ -87,7 +87,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
     test "displays mandarin_to_english_word", %{conn: conn, mandarin_to_english_word: mandarin_to_english_word} do
       {:ok, _show_live, html} = live(conn, Routes.mandarin_to_english_word_show_path(conn, :show, mandarin_to_english_word))
 
-      assert html =~ "Show Mandarin to english word"
+      assert html =~ "Show Mandarin to English Word"
       assert html =~ mandarin_to_english_word.etymology
     end
 
@@ -95,7 +95,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
       {:ok, show_live, _html} = live(conn, Routes.mandarin_to_english_word_show_path(conn, :show, mandarin_to_english_word))
 
       assert show_live |> element("a", "Edit") |> render_click() =~
-               "Edit Mandarin to english word"
+               "Edit Mandarin to English Word"
 
       assert_patch(show_live, Routes.mandarin_to_english_word_show_path(conn, :edit, mandarin_to_english_word))
 
@@ -109,7 +109,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLiveTest do
         |> render_submit()
         |> follow_redirect(conn, Routes.mandarin_to_english_word_show_path(conn, :show, mandarin_to_english_word))
 
-      assert html =~ "Mandarin to english word updated successfully"
+      assert html =~ "Mandarin to English Word updated successfully"
       assert html =~ "some updated etymology"
     end
   end

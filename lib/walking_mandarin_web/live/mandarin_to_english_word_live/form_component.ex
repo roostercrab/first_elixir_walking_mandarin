@@ -32,7 +32,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent do
       {:ok, _mandarin_to_english_word} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Mandarin to english word updated successfully")
+         |> put_flash(:info, "Mandarin to English Word updated successfully")
          |> push_redirect(to: socket.assigns.return_to)}
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -45,7 +45,7 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent do
       {:ok, _mandarin_to_english_word} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Mandarin to english word created successfully")
+         |> put_flash(:info, "Mandarin to English Word created successfully")
          |> push_redirect(to: socket.assigns.return_to)}
 
       {:error, %Ecto.Changeset{} = changeset} ->

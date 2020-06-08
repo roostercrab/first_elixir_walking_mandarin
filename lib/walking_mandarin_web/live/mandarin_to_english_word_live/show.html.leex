@@ -1,4 +1,4 @@
-<h1>Show Mandarin to english word</h1>
+<h1>Show Mandarin to English Word</h1>
 
 <%= if @live_action in [:edit] do %>
   <%= live_modal @socket, WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent,
@@ -12,12 +12,12 @@
 <ul>
 
   <li>
-    <strong>Hanzi standard:</strong>
+    <strong>Hanzi Standard:</strong>
     <%= @mandarin_to_english_word.hanzi_standard %>
   </li>
 
   <li>
-    <strong>Hanzi traditional:</strong>
+    <strong>Hanzi Traditional:</strong>
     <%= @mandarin_to_english_word.hanzi_traditional %>
   </li>
 

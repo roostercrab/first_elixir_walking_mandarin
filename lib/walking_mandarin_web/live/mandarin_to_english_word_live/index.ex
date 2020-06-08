@@ -16,19 +16,19 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLive.Index do
 
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
-    |> assign(:page_title, "Edit Mandarin to english word")
+    |> assign(:page_title, "Edit Mandarin to English Word")
     |> assign(:mandarin_to_english_word, Languages.get_mandarin_to_english_word!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "New Mandarin to english word")
+    |> assign(:page_title, "New Mandarin to English Word")
     |> assign(:mandarin_to_english_word, %MandarinToEnglishWord{})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Mandarin to english words")
+    |> assign(:page_title, "Listing Mandarin to English Words")
     |> assign(:mandarin_to_english_word, nil)
   end
 

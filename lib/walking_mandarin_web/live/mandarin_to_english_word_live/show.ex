@@ -16,6 +16,6 @@ defmodule WalkingMandarinWeb.MandarinToEnglishWordLive.Show do
      |> assign(:mandarin_to_english_word, Languages.get_mandarin_to_english_word!(id))}
   end
 
-  defp page_title(:show), do: "Show Mandarin to english word"
-  defp page_title(:edit), do: "Edit Mandarin to english word"
+  defp page_title(:show), do: "Show Mandarin to English Word"
+  defp page_title(:edit), do: "Edit Mandarin to English Word"
 end

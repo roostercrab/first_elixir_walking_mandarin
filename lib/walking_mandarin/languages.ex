@@ -24,7 +24,7 @@ defmodule WalkingMandarin.Languages do
   @doc """
   Gets a single mandarin_to_english_word.
 
-  Raises `Ecto.NoResultsError` if the Mandarin to english word does not exist.
+  Raises `Ecto.NoResultsError` if the Mandarin to English Word does not exist.
 
   ## Examples
 

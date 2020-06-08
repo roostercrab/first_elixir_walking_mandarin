@@ -1,4 +1,4 @@
-<h1>Listing Mandarin to english words</h1>
+<h1>Listing Mandarin to English Words</h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <%= live_modal @socket, WalkingMandarinWeb.MandarinToEnglishWordLive.FormComponent,
@@ -12,8 +12,8 @@
 <table>
   <thead>
     <tr>
-      <th>Hanzi standard</th>
-      <th>Hanzi traditional</th>
+      <th>Hanzi Standard</th>
+      <th>Hanzi Traditional</th>
       <th>Pinyin</th>
       <th>Meaning</th>
       <th>Pronounciation helper</th>
@@ -64,4 +64,4 @@
   </tbody>
 </table>
 
-<span><%= live_patch "New Mandarin to english word", to: Routes.mandarin_to_english_word_index_path(@socket, :new) %></span>
+<span><%= live_patch "New Mandarin to English Word", to: Routes.mandarin_to_english_word_index_path(@socket, :new) %></span>
