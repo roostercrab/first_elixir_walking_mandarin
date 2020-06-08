@@ -22,11 +22,7 @@ defmodule WalkingMandarinWeb.Router do
 
     live "/", PageLive, :index
 
-    live "/mandarin_to_english_words", MandarinToEnglishWordLive.Index, :index
-    live "/mandarin_to_english_words/new", MandarinToEnglishWordLive.Index, :new
-    live "/mandarin_to_english_words/:id/edit", MandarinToEnglishWordLive.Index, :edit
-    live "/mandarin_to_english_words/:id", MandarinToEnglishWordLive.Show, :show
-    live "/mandarin_to_english_words/:id/show/edit", MandarinToEnglishWordLive.Show, :edit
+
 
   end
 
@@ -73,6 +69,12 @@ defmodule WalkingMandarinWeb.Router do
     put "/user/settings/update_password", UsersSettingsController, :update_password
     put "/user/settings/update_email", UsersSettingsController, :update_email
     get "/user/settings/confirm_email/:token", UsersSettingsController, :confirm_email
+
+    live "/mandarin_to_english_words", MandarinToEnglishWordLive.Index, :index
+    live "/mandarin_to_english_words/new", MandarinToEnglishWordLive.Index, :new
+    live "/mandarin_to_english_words/:id/edit", MandarinToEnglishWordLive.Index, :edit
+    live "/mandarin_to_english_words/:id", MandarinToEnglishWordLive.Show, :show
+    live "/mandarin_to_english_words/:id/show/edit", MandarinToEnglishWordLive.Show, :edit
   end
 
   scope "/", WalkingMandarinWeb do
