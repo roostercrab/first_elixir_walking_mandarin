@@ -1,0 +1,82 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "mandarin_character-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :hanzi_standard %>
+  <%= text_input f, :hanzi_standard %>
+  <%= error_tag f, :hanzi_standard %>
+
+  <%= label f, :hanzi_traditional %>
+  <%= text_input f, :hanzi_traditional %>
+  <%= error_tag f, :hanzi_traditional %>
+
+  <%= label f, :pinyin %>
+  <%= text_input f, :pinyin %>
+  <%= error_tag f, :pinyin %>
+
+  <%= label f, :meaning %>
+  <%= textarea f, :meaning %>
+  <%= error_tag f, :meaning %>
+
+  <%= label f, :pronounciation_helper %>
+  <%= text_input f, :pronounciation_helper %>
+  <%= error_tag f, :pronounciation_helper %>
+
+  <%= label f, :mnemonic %>
+  <%= textarea f, :mnemonic %>
+  <%= error_tag f, :mnemonic %>
+
+  <%= label f, :part_of_speech %>
+  <%= text_input f, :part_of_speech %>
+  <%= error_tag f, :part_of_speech %>
+
+  <%= label f, :radical %>
+  <%= text_input f, :radical %>
+  <%= error_tag f, :radical %>
+
+  <%= label f, :initial %>
+  <%= text_input f, :initial %>
+  <%= error_tag f, :initial %>
+
+  <%= label f, :final %>
+  <%= text_input f, :final %>
+  <%= error_tag f, :final %>
+
+  <%= label f, :tone %>
+  <%= text_input f, :tone %>
+  <%= error_tag f, :tone %>
+
+  <%= label f, :etymology %>
+  <%= textarea f, :etymology %>
+  <%= error_tag f, :etymology %>
+
+  <%= label f, :image %>
+  <%= text_input f, :image %>
+  <%= error_tag f, :image %>
+
+  <%= label f, :sound %>
+  <%= text_input f, :sound %>
+  <%= error_tag f, :sound %>
+
+  <%= label f, :stroke_order_simplified %>
+  <%= text_input f, :stroke_order_simplified %>
+  <%= error_tag f, :stroke_order_simplified %>
+
+  <%= label f, :stroke_order_traditional %>
+  <%= text_input f, :stroke_order_traditional %>
+  <%= error_tag f, :stroke_order_traditional %>
+
+  <%= label f, :translated_to %>
+  <%= text_input f, :translated_to %>
+  <%= error_tag f, :translated_to %>
+
+  <%= label f, :vote_value %>
+  <%= number_input f, :vote_value %>
+  <%= error_tag f, :vote_value %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>

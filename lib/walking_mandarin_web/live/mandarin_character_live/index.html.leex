@@ -1,0 +1,69 @@
+<h1>Listing Mandarin characters</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, WalkingMandarinWeb.MandarinCharacterLive.FormComponent,
+    id: @mandarin_character.id || :new,
+    title: @page_title,
+    action: @live_action,
+    mandarin_character: @mandarin_character,
+    return_to: Routes.mandarin_character_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hanzi standard</th>
+      <th>Hanzi traditional</th>
+      <th>Pinyin</th>
+      <th>Meaning</th>
+      <th>Pronounciation helper</th>
+      <th>Mnemonic</th>
+      <th>Part of speech</th>
+      <th>Radical</th>
+      <th>Initial</th>
+      <th>Final</th>
+      <th>Tone</th>
+      <th>Etymology</th>
+      <th>Image</th>
+      <th>Sound</th>
+      <th>Stroke order simplified</th>
+      <th>Stroke order traditional</th>
+      <th>Translated to</th>
+      <th>Vote value</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="mandarin_characters">
+    <%= for mandarin_character <- @mandarin_characters do %>
+      <tr id="mandarin_character-<%= mandarin_character.id %>">
+        <td><%= mandarin_character.hanzi_standard %></td>
+        <td><%= mandarin_character.hanzi_traditional %></td>
+        <td><%= mandarin_character.pinyin %></td>
+        <td><%= mandarin_character.meaning %></td>
+        <td><%= mandarin_character.pronounciation_helper %></td>
+        <td><%= mandarin_character.mnemonic %></td>
+        <td><%= mandarin_character.part_of_speech %></td>
+        <td><%= mandarin_character.radical %></td>
+        <td><%= mandarin_character.initial %></td>
+        <td><%= mandarin_character.final %></td>
+        <td><%= mandarin_character.tone %></td>
+        <td><%= mandarin_character.etymology %></td>
+        <td><%= mandarin_character.image %></td>
+        <td><%= mandarin_character.sound %></td>
+        <td><%= mandarin_character.stroke_order_simplified %></td>
+        <td><%= mandarin_character.stroke_order_traditional %></td>
+        <td><%= mandarin_character.translated_to %></td>
+        <td><%= mandarin_character.vote_value %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.mandarin_character_show_path(@socket, :show, mandarin_character) %></span>
+          <span><%= live_patch "Edit", to: Routes.mandarin_character_index_path(@socket, :edit, mandarin_character) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: mandarin_character.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Mandarin character", to: Routes.mandarin_character_index_path(@socket, :new) %></span>

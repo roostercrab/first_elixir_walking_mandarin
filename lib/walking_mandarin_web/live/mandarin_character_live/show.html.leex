@@ -1,0 +1,107 @@
+<h1>Show Mandarin character</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, WalkingMandarinWeb.MandarinCharacterLive.FormComponent,
+    id: @mandarin_character.id,
+    title: @page_title,
+    action: @live_action,
+    mandarin_character: @mandarin_character,
+    return_to: Routes.mandarin_character_show_path(@socket, :show, @mandarin_character) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Hanzi standard:</strong>
+    <%= @mandarin_character.hanzi_standard %>
+  </li>
+
+  <li>
+    <strong>Hanzi traditional:</strong>
+    <%= @mandarin_character.hanzi_traditional %>
+  </li>
+
+  <li>
+    <strong>Pinyin:</strong>
+    <%= @mandarin_character.pinyin %>
+  </li>
+
+  <li>
+    <strong>Meaning:</strong>
+    <%= @mandarin_character.meaning %>
+  </li>
+
+  <li>
+    <strong>Pronounciation helper:</strong>
+    <%= @mandarin_character.pronounciation_helper %>
+  </li>
+
+  <li>
+    <strong>Mnemonic:</strong>
+    <%= @mandarin_character.mnemonic %>
+  </li>
+
+  <li>
+    <strong>Part of speech:</strong>
+    <%= @mandarin_character.part_of_speech %>
+  </li>
+
+  <li>
+    <strong>Radical:</strong>
+    <%= @mandarin_character.radical %>
+  </li>
+
+  <li>
+    <strong>Initial:</strong>
+    <%= @mandarin_character.initial %>
+  </li>
+
+  <li>
+    <strong>Final:</strong>
+    <%= @mandarin_character.final %>
+  </li>
+
+  <li>
+    <strong>Tone:</strong>
+    <%= @mandarin_character.tone %>
+  </li>
+
+  <li>
+    <strong>Etymology:</strong>
+    <%= @mandarin_character.etymology %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @mandarin_character.image %>
+  </li>
+
+  <li>
+    <strong>Sound:</strong>
+    <%= @mandarin_character.sound %>
+  </li>
+
+  <li>
+    <strong>Stroke order simplified:</strong>
+    <%= @mandarin_character.stroke_order_simplified %>
+  </li>
+
+  <li>
+    <strong>Stroke order traditional:</strong>
+    <%= @mandarin_character.stroke_order_traditional %>
+  </li>
+
+  <li>
+    <strong>Translated to:</strong>
+    <%= @mandarin_character.translated_to %>
+  </li>
+
+  <li>
+    <strong>Vote value:</strong>
+    <%= @mandarin_character.vote_value %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.mandarin_character_show_path(@socket, :edit, @mandarin_character), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.mandarin_character_index_path(@socket, :index) %></span>
